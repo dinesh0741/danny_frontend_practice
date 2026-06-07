@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-employee-list',
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [ReactiveFormsModule],
     templateUrl: './employee-list.component.html',
     styleUrl: './employee-list.component.scss'
 })
 export class EmployeeListComponent implements OnInit {
 
-   
+   public isLoggedIn: boolean = true; // Example variable for conditional rendering
    public employees: Employee[] = [];
 
    constructor(private employeeService: EmployeeService,
