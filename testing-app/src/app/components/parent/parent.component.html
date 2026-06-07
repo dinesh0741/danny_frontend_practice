@@ -1,0 +1,24 @@
+<p>Parent to Child Data Pass</p>
+
+
+<app-child (moveToParent)="processMoveToParent($event)"></app-child>
+
+<p> Employee Selected : {{employeeSelected}}</p>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+ //Two way parent to child communication
+<app-child [count]="counter" (countChange)="counter = $event"></app-child>
+
+<app-child
+  [employeeNameSignal]="name"
+  (employeeSelected)="onSelected($event)">
+</app-child>

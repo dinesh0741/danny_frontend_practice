@@ -1,0 +1,33 @@
+<p>Passing data from Child to Parent</p>
+<p>Employee Name : {{employeeName}}</p>
+
+<button (click)="moveToParent($event)">Move to Parent</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <p>{{ count }}</p>
+ <button (click)="increment()">Increment</button>
+
+<br>
+<br>   
+<p>Signal Example</p>
+<p>{{ countSignal() }}</p>
+<button (click)="incrementSignal()">
+    Increment Signal
+</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>{{single()}}</p>
+<p>{{double()}}</p>
+<button (click)="incrementSingleSignal()">Increment Single Signal</button>
