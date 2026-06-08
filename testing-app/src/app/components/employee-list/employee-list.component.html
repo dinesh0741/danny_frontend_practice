@@ -2,7 +2,7 @@
   Add Employee
 </button>
 
-//If else example using the new control flow syntax in Angular 17+ 
+<!-- else example using the new control flow syntax in Angular 17+ -->
 @if (isLoggedIn) {
   <h2>Welcome User</h2>
 } @else {
@@ -13,18 +13,23 @@
 
   <!-- In Angular 17+ (including Angular 18, 19, 20, and current Angular 21 previews),
     the new control flow syntax uses @for. -->
-  //Angular uses the value of employee itself as the tracking key.
+  <!--Angular uses the value of employee itself as the tracking key.-->
 
-  //No TypeScript method required.
-  //The track expression tells Angular how to uniquely identify each item in the list when the array changes.
+  <!--No TypeScript method required.-->
+  <!--The track expression tells Angular how to uniquely identify each item in the list when the array changes.-->
   @for (employee of employees; track employee) {
-    <tr>
-      <td>{{employee.firstName}}</td>
-      <td>{{employee.lastName}}</td>
-      <td>{{employee.email}}</td>
-      <td>
+    <tr style="border: 1px solid black;">
+      <td >{{employee.firstName}}</td>
+      <td >{{employee.lastName}}</td>
+      <td style="border: 1px solid black;">{{employee.email}}</td>
+      <td style="border: 1px solid black;">
         <button (click)="deleteEmployee(employee.id!)">
           Delete
+        </button>
+      </td>
+      <td style="border: 1px solid black;">
+        <button (click)="editEmployee(employee.id!)">
+          Edit
         </button>
       </td>
     </tr>

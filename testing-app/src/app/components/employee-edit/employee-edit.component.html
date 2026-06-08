@@ -1,1 +1,17 @@
-<p>employee-edit works!</p>
+<p>UPDATE EMPLOYEE</p>
+
+<form [formGroup]="employeeForm">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName">
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+    </div>
+    <button type="submit" (click)="updateEmployee()">Update Employee</button>
+</form>

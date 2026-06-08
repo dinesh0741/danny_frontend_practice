@@ -14,14 +14,15 @@ export class EmployeeAddComponent implements OnInit{
   constructor(
     private fb : FormBuilder, 
     private employeeService: EmployeeService,
-    private router: ActivatedRoute, 
     private route: Router
   ){
-    this.employeeForm = this.fb.group({
+    this.employeeForm = this.fb.group(
+      {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
-    });
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -31,7 +32,15 @@ export class EmployeeAddComponent implements OnInit{
 
   addEmployee(){
     if(this.employeeForm.valid){
-      this.employeeService.addEmployee(this.employeeForm.value).subscribe();
+      this.employeeService.addEmployee(this.employeeForm.value).subscribe({
+        next: (response) => {
+          console.log('Employee added successfully:', response);
+          this.route.navigate(['/']);
+        },
+        error: (error) => {
+          console.error('Error adding employee:', error);
+        }
+      });
     }
    }
 
